@@ -33,7 +33,7 @@ const languages = {
     },
     'en': {
         'site_title': 'NOAH INTERIOR - Woodworking & Wooden House Specialist',
-        'logo_text': 'NOAH',
+        'logo_text': 'NOAH Int',
         'nav_language': 'Language',
         'nav_contact': 'Contact',
         'home_title': 'NOAH INTERIOR',
@@ -65,7 +65,7 @@ const languages = {
     },
     'vi': {
         'site_title': 'NOAH INTERIOR - Chuyên gia về Mộc & Nhà gỗ',
-        'logo_text': 'NOAH',
+        'logo_text': 'NOAH Int',
         'nav_language': 'Ngôn ngữ',
         'nav_contact': 'Liên hệ',
         'home_title': 'NOAH INTERIOR',
@@ -97,7 +97,7 @@ const languages = {
     },
     'ja': {
         'site_title': 'NOAH INTERIOR - 木工＆木造住宅専門',
-        'logo_text': 'NOAH',
+        'logo_text': 'NOAH Int',
         'nav_language': '言語',
         'nav_contact': '問合せ',
         'home_title': 'NOAH INTERIOR',
