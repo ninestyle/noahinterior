@@ -28,27 +28,22 @@ a:hover { color: #000; }
 /* --- 홈 섹션 (슬라이더 스타일) --- */
 .fullscreen {
     height: 100vh;
-    /* background 속성 제거 */
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: #fff;
-    overflow: hidden; /* 슬라이드 넘침 방지 */
+    overflow: hidden;
 }
-
-/* 슬라이드 컨테이너 */
 .slides-container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0; /* 가장 아래 */
+    z-index: 0;
 }
-
-/* 개별 슬라이드 */
 .slide {
     position: absolute;
     top: 0;
@@ -58,37 +53,38 @@ a:hover { color: #000; }
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    opacity: 0; /* 기본적으로 투명 */
-    transition: opacity 1.5s ease-in-out; /* 페이드 효과 (1.5초) */
-    z-index: 1; /* 슬라이드 Z-index */
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    z-index: 1;
 }
-
-/* 활성화된 슬라이드 */
 .slide.active {
-    opacity: 1; /* 보이게 */
-    z-index: 2; /* 활성 슬라이드는 위로 (페이드 효과에는 필수는 아님) */
+    opacity: 1;
+    z-index: 2;
 }
-
-
 .fullscreen .overlay {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background-color: rgba(0, 0, 0, 0.55);
-    z-index: 3; /* 어두운 오버레이: 슬라이드 위 */
+    z-index: 3;
 }
-
 .fullscreen::before {
     content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
     background-size: 4px 4px;
-    z-index: 4; /* 도트 패턴: 어두운 오버레이 위 */
+    z-index: 4;
     pointer-events: none;
 }
-
 .fullscreen .content {
-    z-index: 5; /* 텍스트 콘텐츠: 가장 위 */
+    z-index: 5;
 }
-
 .fullscreen h1 { font-size: 4.5rem; font-weight: 700; letter-spacing: 2px; text-shadow: 0 2px 5px rgba(0,0,0,0.3); }
+/* 홈 섹션 부제목 추가 */
+#home .content .subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-top: 15px;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
 
 /* 스크롤 애니메이션 */
 .fade-in-section { opacity: 0; transform: translateY(80px) scale(0.98); transition: opacity 1.2s cubic-bezier(0.165, 0.84, 0.44, 1), transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1); }
@@ -101,16 +97,35 @@ a:hover { color: #000; }
 #business .business-item h3 { font-size: 1.6rem; margin-bottom: 20px; text-align: center; }
 #business .business-item h3 .material-symbols-outlined { display: none; }
 
-/* 주요 제품 섹션 */
+/* 주요 제품/서비스 섹션 */
 #products .product-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 35px; margin-top: 50px; }
 #products .product-item { background: #fff; border: 1px solid #e0e0e0; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; text-align: center; }
 #products .product-item:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
 #products .product-item img { width: 100%; height: 220px; object-fit: cover; background-color: #eee; }
 #products .product-item h4 { margin: 15px 0 5px 0; color: #333; font-size: 1.3rem; }
 #products .product-item p { padding: 0 15px 15px 15px; font-size: 0.9rem; color: #666; min-height: 45px; }
+/* 제품/서비스 아이콘 (선택 사항) */
+.product-item.icon img { display: none; }
+.product-item.icon::before {
+    font-family: 'Material Symbols Outlined';
+    font-size: 60px;
+    display: block;
+    margin-bottom: 15px;
+    color: #333;
+}
+.product-item.icon.house::before { content: 'home_work'; }
+.product-item.icon.store::before { content: 'storefront'; }
+.product-item.icon.living::before { content: 'living'; }
+.product-item.icon.chair::before { content: 'chair'; }
 
-/* 공장 위치 섹션 */
+
+/* 공장/사업장 위치 섹션 */
 #location .map-container { margin-top: 40px; border: 2px solid #ddd; border-radius: 12px; overflow: hidden; margin-bottom: 20px; background-color: #eee; }
+/* 지도 iframe 스타일 추가 */
+#location .map-container iframe {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+ }
 #location p { font-size: 1.1rem; }
 
 /* 연락처 섹션 */
@@ -134,5 +149,26 @@ footer { background: #282828; color: #a0a0a0; text-align: center; padding: 25px 
 #to-top-btn:hover { background-color: rgba(0, 0, 0, 0.8); }
 
 /* 반응형 디자인 */
-@media(max-width: 768px) { .section { padding: 60px 0; } .section h2 { font-size: 2rem; } .fullscreen h1 { font-size: 2.8rem; } #business .business-content { flex-direction: column; } #navbar .nav-container { padding: 10px 15px; } #navbar .logo { font-size: 1.2rem; } #lang-switcher button { padding: 5px 8px; font-size: 0.8rem; } .nav-icon-button { width: 35px; height: 35px; } .nav-icon-button .material-symbols-outlined { font-size: 1.2rem; } #navbar .nav-buttons { gap: 8px; } .contact-item { align-items: center; } }
-@media(max-width: 480px) { #navbar .logo { font-size: 1.1rem; } #lang-switcher { gap: 2px; padding: 3px; } #lang-switcher button { padding: 4px 6px; } #navbar .nav-buttons { gap: 5px; } .contact-item { flex-direction: column; text-align: center; } .contact-item .material-symbols-outlined { margin: 0 0 10px 0; } }
+@media(max-width: 768px) {
+    .section { padding: 60px 0; }
+    .section h2 { font-size: 2rem; }
+    .fullscreen h1 { font-size: 2.8rem; }
+    /* 홈 섹션 부제목 반응형 */
+    #home .content .subtitle { font-size: 1.2rem; }
+    #business .business-content { flex-direction: column; }
+    #navbar .nav-container { padding: 10px 15px; }
+    #navbar .logo { font-size: 1.2rem; }
+    #lang-switcher button { padding: 5px 8px; font-size: 0.8rem; }
+    .nav-icon-button { width: 35px; height: 35px; }
+    .nav-icon-button .material-symbols-outlined { font-size: 1.2rem; }
+    #navbar .nav-buttons { gap: 8px; }
+    .contact-item { align-items: center; }
+}
+@media(max-width: 480px) {
+    #navbar .logo { font-size: 1.1rem; }
+    #lang-switcher { gap: 2px; padding: 3px; }
+    #lang-switcher button { padding: 4px 6px; }
+    #navbar .nav-buttons { gap: 5px; }
+    .contact-item { flex-direction: column; text-align: center; }
+    .contact-item .material-symbols-outlined { margin: 0 0 10px 0; }
+}
