@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const toTopBtn = document.getElementById('to-top-btn');
 
     // --- 다국어 처리 ---
-    let currentLang = localStorage.getItem('multi_lang') || 'ko';
+    let currentLang = localStorage.getItem('multi_lang') || 'kr';
 
     function changeLanguage(lang) {
         if (typeof languages === 'undefined' || !languages[lang]) {
