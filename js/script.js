@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const toTopBtn = document.getElementById('to-top-btn');
 
     // --- 다국어 처리 ---
-    let currentLang = localStorage.getItem('maimiiotu_lang') || 'en';
+    let currentLang = localStorage.getItem('multi_lang') || 'ko';
 
     function changeLanguage(lang) {
         if (typeof languages === 'undefined' || !languages[lang]) {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         currentLang = lang;
-        localStorage.setItem('maimiiotu_lang', lang);
+        localStorage.setItem('multi_lang', lang);
         htmlTag.lang = lang;
         elementsToTranslate.forEach(el => {
             const key = el.getAttribute('data-lang');
