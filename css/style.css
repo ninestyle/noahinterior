@@ -2,10 +2,10 @@
 :root {
     /* Light Mode Defaults */
     --bg-primary: #fff;
-    --bg-secondary: #f9f9f9;
+    --bg-secondary: #f9f9f9; /* 짝수 섹션 배경 */
     --bg-navbar: rgba(255, 255, 255, 0.85);
     --bg-footer: #282828;
-    --bg-card: #fff;
+    --bg-card: #fff; /* 일반 카드 (제품 아이템 등) */
     --bg-map-container-loader: #eee;
     --bg-form-container: #fff;
     --bg-lang-switcher: #eee;
@@ -16,13 +16,13 @@
     --bg-to-top-button: rgba(0, 0, 0, 0.6);
     --bg-to-top-button-hover: rgba(0, 0, 0, 0.8);
     --bg-product-image-placeholder: #eee;
-    --bg-business-item: #fff;
+    --bg-business-item: #ffffff; /* Business 아이템 배경 (흰색) */
     --bg-home-overlay: rgba(0, 0, 0, 0.55);
 
     --text-primary: #333;
-    --text-secondary: #555; /* Default link color */
+    --text-secondary: #555;
     --text-headings: #222;
-    --text-accent: #007bff; /* Contact link */
+    --text-accent: #007bff;
     --text-accent-hover: #0056b3;
     --text-footer: #a0a0a0;
     --text-navbar: #333;
@@ -35,15 +35,18 @@
     --text-product-meta: #666;
     --text-section-title-icon: #6a6a6a;
 
-    --border-strong: #ddd; /* iframe container etc. */
-    --border-card: #e0e0e0; /* product item */
+    --border-strong: #ddd;
+    --border-card: #e0e0e0; /* 일반 카드 테두리 */
+    --border-business-item: #dce1e5; /* Business 아이템 테두리 (흰색 배경에 잘 보이도록 살짝 어둡게) */
     --border-navbar-bottom: rgba(0, 0, 0, 0.05);
     --border-section-heading-underline: #6a6a6a;
+    --border-iframe-container: #ddd;
+
 
     --shadow-card: rgba(0,0,0,0.05);
     --shadow-card-hover: rgba(0,0,0,0.1);
-    --shadow-business-item: rgba(0,0,0,0.08);
-    --shadow-business-item-hover: rgba(0,0,0,0.12);
+    --shadow-business-item: rgba(0,0,0,0.07); /* Business 아이템 그림자 살짝 조정 */
+    --shadow-business-item-hover: rgba(0,0,0,0.11);
     --shadow-navbar: rgba(0, 0, 0, 0.05);
     --shadow-form-container: rgba(0, 0, 0, 0.08);
     --shadow-home-text: rgba(0,0,0,0.3);
@@ -54,8 +57,8 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg-primary: #1a1a1a;
-        --bg-secondary: #242424;
+        --bg-primary: #1a1a1a; /* 홀수 섹션 배경 */
+        --bg-secondary: #212121; /* 짝수 섹션 배경 (기존 #242424 보다 살짝 어둡게 하여 대비 강화) */
         --bg-navbar: rgba(28, 28, 28, 0.85);
         --bg-footer: #121212;
         --bg-card: #2c2c2c;
@@ -69,12 +72,12 @@
         --bg-to-top-button: rgba(255, 255, 255, 0.2);
         --bg-to-top-button-hover: rgba(255, 255, 255, 0.4);
         --bg-product-image-placeholder: #333;
-        --bg-business-item: #2c2c2c;
+        --bg-business-item: #2e2e2e; /* Business 아이템 배경 (짝수 섹션 배경 #212121 보다 밝게) */
         --bg-home-overlay: rgba(0, 0, 0, 0.65);
 
 
         --text-primary: #e0e0e0;
-        --text-secondary: #bb86fc; /* Link color for dark mode */
+        --text-secondary: #bb86fc;
         --text-headings: #ffffff;
         --text-accent: #bb86fc;
         --text-accent-hover: #d0a0ff;
@@ -91,18 +94,20 @@
 
         --border-strong: #555;
         --border-card: #444;
+        --border-business-item: #4a4a4a; /* Business 아이템 테두리 (배경 #2e2e2e 보다 밝게) */
         --border-navbar-bottom: rgba(255, 255, 255, 0.1);
         --border-section-heading-underline: #aaa;
+        --border-iframe-container: #555;
 
-        --shadow-card: rgba(255,255,255,0.03);
-        --shadow-card-hover: rgba(255,255,255,0.06);
-        --shadow-business-item: rgba(255,255,255,0.04);
-        --shadow-business-item-hover: rgba(255,255,255,0.08);
-        --shadow-navbar: rgba(255, 255, 255, 0.03);
-        --shadow-form-container: rgba(255,255,255,0.04);
-        --shadow-home-text: rgba(0,0,0,0.5); /* Dark shadow on light text can still work */
+
+        --shadow-card: rgba(0,0,0,0.1); /* 다크모드에서는 그림자가 잘 안보이므로 미세하게 조정 또는 제거 고려 */
+        --shadow-card-hover: rgba(0,0,0,0.15);
+        --shadow-business-item: rgba(0,0,0,0.12);
+        --shadow-business-item-hover: rgba(0,0,0,0.18);
+        --shadow-navbar: rgba(0,0,0,0.1); /* 기존 값보다 좀 더 어둡게 (배경이 어두우므로) */
+        --shadow-form-container: rgba(0,0,0,0.12);
+        --shadow-home-text: rgba(0,0,0,0.5);
         --shadow-home-subtitle-text: rgba(0,0,0,0.6);
-
 
         --image-filter-default: brightness(0.85) contrast(0.95);
     }
@@ -120,7 +125,7 @@ body {
 
 h1, h2, h3, h4 { font-weight: 700; color: var(--text-headings); }
 a { color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease; }
-a:hover { color: var(--text-accent-hover, var(--text-secondary)); } /* Use accent hover if defined, else secondary */
+a:hover { color: var(--text-accent-hover, var(--text-secondary)); }
 
 .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 .material-symbols-outlined { vertical-align: middle; font-size: 1.2em; margin-right: 8px; }
@@ -268,7 +273,8 @@ section:not(#home):nth-of-type(even) { background-color: var(--bg-secondary); }
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 8px 25px var(--shadow-business-item);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.3s ease, border-color 0.3s ease;
+    border: 1px solid var(--border-business-item); /* 테두리 추가 */
 }
 #business .business-item:hover { transform: translateY(-8px); box-shadow: 0 12px 35px var(--shadow-business-item-hover); }
 #business .business-item h3 { font-size: 1.6rem; margin-bottom: 20px; text-align: center; }
@@ -281,7 +287,7 @@ section:not(#home):nth-of-type(even) { background-color: var(--bg-secondary); }
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px var(--shadow-card);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
     text-align: center;
 }
 #products .product-item:hover { transform: translateY(-5px); box-shadow: 0 10px 25px var(--shadow-card-hover); }
@@ -305,8 +311,9 @@ section iframe { display: block; width: 100%; border: none; }
 #location .map-container {
     margin-bottom: 20px;
     background-color: var(--bg-map-container-loader);
+    transition: background-color 0.3s ease;
 }
-#location .map-container iframe { border-radius: 10px; }
+#location .map-container iframe { border-radius: 10px; } /* 컨테이너 radius 보다 작게하여 내부 여백 효과 */
 #location p { font-size: 1.1rem; margin-top: 20px; }
 
 /* Quote Request Section (Form) */
@@ -318,7 +325,7 @@ section iframe { display: block; width: 100%; border: none; }
     box-shadow: 0 4px 12px var(--shadow-form-container);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-#quote-request .quote-form-container iframe { border-radius: 10px; }
+#quote-request .quote-form-container iframe { border-radius: 10px; } /* 컨테이너 radius 보다 작게하여 내부 여백 효과 */
 
 /* Contact Section */
 #contact .contact-info { margin-top: 40px; display: inline-block; text-align: left; }
