@@ -29,6 +29,8 @@ const languages = {
         'rep_label': '대표:',
         'phone_label': '연락처:',
         'email_label': '이메일:',
+        'quote_title': '견적 요청',
+        'quote_desc': '아래 양식을 작성해주시면 담당자가 확인 후 신속하게 연락드리겠습니다.',
         'footer_text': '© 2025 노아인테리어. All Rights Reserved.'
     },
     'en': {
@@ -61,6 +63,8 @@ const languages = {
         'rep_label': 'Representative:',
         'phone_label': 'Contact:',
         'email_label': 'Email:',
+        'quote_title': 'Request a Quote',
+        'quote_desc': 'Please fill out the form below, and our representative will contact you shortly.',
         'footer_text': '© 2025 NOAH INTERIOR. All Rights Reserved.'
     },
     'vi': {
@@ -93,6 +97,8 @@ const languages = {
         'rep_label': 'Đại diện:',
         'phone_label': 'Điện thoại:',
         'email_label': 'Email:',
+        'quote_title': 'Yêu cầu báo giá',
+        'quote_desc': 'Vui lòng điền vào biểu mẫu dưới đây, đại diện của chúng tôi sẽ sớm liên hệ với bạn.',
         'footer_text': '© 2025 NOAH INTERIOR. Mọi quyền được bảo lưu.'
     },
     'ja': {
@@ -125,6 +131,8 @@ const languages = {
         'rep_label': '代表:',
         'phone_label': '連絡先:',
         'email_label': 'メール:',
+        'quote_title': '見積もり依頼',
+        'quote_desc': '下記のフォームにご記入ください。担当者より折り返しご連絡いたします。',
         'footer_text': '© 2025 NOAH INTERIOR. All Rights Reserved.'
     }
 };
